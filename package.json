@@ -1,0 +1,14 @@
+{
+  "name": "wknd3_calulator",
+  "version": "1.0.0",
+  "description": "Weekend Challenge 3, building server, client, and routers",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Laura Abend",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
