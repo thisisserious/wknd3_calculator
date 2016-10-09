@@ -11,7 +11,7 @@ app.use('/calculator', calcRouter);
 
 app.post('/', function (req, res) {
   console.log('req.body=', req.body);
-  res.sendStatus(200);
+  res.send(req.body);
 });
 
 app.get('/', function (req, res) {
