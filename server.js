@@ -2,12 +2,13 @@ var express = require('express'); // require the Express library
 var bodyParser = require('body-parser'); // require body-parser module
 var path = require('path');
 var calcRouter = require('./routes/calculator');
-
+var subtractRouter = require('./routes/subtract');
 var app = express(); // create a new app
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/calculator', calcRouter);
+app.use('/subtract', subtractRouter);
 
 app.post('/', function (req, res) {
   console.log('req.body=', req.body);

@@ -2,10 +2,12 @@ console.log('Client is running');
 
 $(function () {
 
-  getNums();
+  // getNums();
 
-  $('form').on('submit', function (event) {
+  $('form').on('click', 'button', function (event) {
     event.preventDefault();
+    var mathOperation = $(this).data('operator');
+    console.log('math operation:', mathOperation);
 
     var formData = $(this).serialize();
 
@@ -13,10 +15,26 @@ $(function () {
       type: 'POST',
       url: '/calculator',
       data: formData,
-      success: function (numsObj) {
-        console.log('numsObj:', numsObj);
+      success: function (addObj) {
+        console.log('numsObj:', addObj);
         var $li = $('<div></div>');
-        $li.append('<p>' + numsObj + '</p>');
+        $li.append('<p>' + addObj + '</p>');
+        $li.append('<button id="clear">Clear</button>');
+        $('#numbers').append($li);
+        $('#clear').on('click', function () {
+          $('#numbers').empty();
+        });
+      },
+    });
+
+    $.ajax({
+      type: 'POST',
+      url: '/subtract',
+      data: formData,
+      success: function (diffObj) {
+        console.log('diffObj:', diffObj);
+        var $li = $('<div></div>');
+        $li.append('<p>' + diffObj + '</p>');
         $li.append('<button id="clear">Clear</button>');
         $('#numbers').append($li);
         $('#clear').on('click', function () {
@@ -51,8 +69,3 @@ function getNums() {
     },
   });
 }
-
-$('button').on('submit', function () {
-    var mathOperation = $(this).attr('id');
-    console.log('math operation:', mathOperation);
-  });
