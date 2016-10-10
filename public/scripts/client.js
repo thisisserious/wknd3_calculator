@@ -46,7 +46,7 @@ $(function () {
 
     var inputs = $(this).find('input[type=number]').val('');
     console.log('inputs:', inputs);
-    var buttons = $(this).find('button[type=submit]').addClass('add');
+    var buttons = $(this).find('button[type=submit]').val('');
     console.log('buttons:', buttons);
   });
 
