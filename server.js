@@ -10,10 +10,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/calculator', calcRouter);
 app.use('/subtract', subtractRouter);
 
-app.post('/', function (req, res) {
-  console.log('req.body=', req.body);
-  res.send(req.body);
-});
+// app.post('/', function (req, res) {
+//   console.log('req.body=', req.body);
+//   res.send(req.body);
+// });
 
 app.get('/', function (req, res) {
   var date = new Date();
@@ -21,7 +21,7 @@ app.get('/', function (req, res) {
   var mins = date.getMinutes();
   console.log('Received request at:', hour + ':' + mins);
   var filename = path.join(__dirname, 'public/views/index.html');
-  console.log('filename:', filename);
+  // console.log('filename:', filename);
   res.sendFile(filename);
 });
 

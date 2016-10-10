@@ -4,12 +4,13 @@ $(function () {
 
   // getNums();
 
-  $('form').on('click', 'button', function (event) {
+  $('form').on('submit', function (event) {
     event.preventDefault();
-    var mathOperation = $(this).data('operator');
-    console.log('math operation:', mathOperation);
 
     var formData = $(this).serialize();
+    console.log('this:', this);
+    // var mathOperation = $(this).eq(4).attr('id');
+    // console.log('math operation:', mathOperation);
 
     $.ajax({
       type: 'POST',
@@ -43,7 +44,10 @@ $(function () {
       },
     });
 
-    $(this).find('input[type=number]').val('');
+    var inputs = $(this).find('input[type=number]').val('');
+    console.log('inputs:', inputs);
+    var buttons = $(this).find('button[type=submit]').addClass('add');
+    console.log('buttons:', buttons);
   });
 
 });
