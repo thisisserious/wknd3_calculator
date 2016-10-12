@@ -28,21 +28,21 @@ $(function () {
       },
     });
 
-    $.ajax({
-      type: 'POST',
-      url: '/subtract',
-      data: formData,
-      success: function (diffObj) {
-        console.log('diffObj:', diffObj);
-        var $li = $('<div></div>');
-        $li.append('<p>' + diffObj + '</p>');
-        $li.append('<button id="clear">Clear</button>');
-        $('#numbers').append($li);
-        $('#clear').on('click', function () {
-          $('#numbers').empty();
-        });
-      },
-    });
+    // $.ajax({
+    //   type: 'POST',
+    //   url: '/subtract',
+    //   data: formData,
+    //   success: function (diffObj) {
+    //     console.log('diffObj:', diffObj);
+    //     var $li = $('<div></div>');
+    //     $li.append('<p>' + diffObj + '</p>');
+    //     $li.append('<button id="clear">Clear</button>');
+    //     $('#numbers').append($li);
+    //     $('#clear').on('click', function () {
+    //       $('#numbers').empty();
+    //     });
+    //   },
+    // });
 
     var inputs = $(this).find('input[type=number]').val('');
     console.log('inputs:', inputs);
@@ -52,24 +52,24 @@ $(function () {
 
 });
 
-function getNums() {
-  $.ajax({
-    type: 'GET',
-    url: '/calculator',
-    success: function (nums) {
-      console.log('nums:', nums);
-
-      // $('#numbers').empty();
-      for (key in nums) {
-        console.log('key:', key);
-      }
-
-      // nums.forEach(function (num) {
-      //   var $li = $('<li></li>');
-      //   $li.append('<p>' + body.num.firstNum + '</p>');
-      //   $li.append('<p>' + body.num.secondNum + '</p>');
-      //   $('#numbers').append($li);
-      // });
-    },
-  });
-}
+// function getNums() {
+//   $.ajax({
+//     type: 'GET',
+//     url: '/calculator',
+//     success: function (nums) {
+//       console.log('nums:', nums);
+//
+//       // $('#numbers').empty();
+//       for (key in nums) {
+//         console.log('key:', key);
+//       }
+//
+//       // nums.forEach(function (num) {
+//       //   var $li = $('<li></li>');
+//       //   $li.append('<p>' + body.num.firstNum + '</p>');
+//       //   $li.append('<p>' + body.num.secondNum + '</p>');
+//       //   $('#numbers').append($li);
+//       // });
+//     },
+//   });
+// }

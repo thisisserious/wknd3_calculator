@@ -14,21 +14,29 @@
   <body>
     <div id='container'>
       <h1>Calculator</h1>
-      <form>
+      <form id='calculator'>
         <label>1st Number</label>
         <input type='number' name='firstNum' />
 
         <label>2nd Number</label>
         <input type='number' name='secondNum' />
 
-        <button id='add' type='submit' data-operator='add'>Add</button>
-        <button id='subtract' type='submit' data-operator='subtract'>Subtract</button>
-        <button id='multiply' type='submit' data-operator='multiply'>Multiply</button>
-        <button id='divide' type='submit' data-operator='divide'>Divide</button>
+        <label for='add'>Add</label>
+        <input type='radio' name='mathOperation' value='add' id='add'/>
 
-        <div id='numbers'></div>
+        <label for='subtract'>Subtract</label>
+        <input type='radio' name='mathOperation' value='subtract' id='subtract'/>
 
+        <label for='multiply'>Multiply</label>
+        <input type='radio' name='mathOperation' value='multiply' id='multiply'/>
+
+        <label for='divide'>Divide</label>
+        <input type='radio' name='mathOperation' value='divide' id='divide'/>
+
+        <input type='submit' value='=' />
       </form>
+      
+      <div id='numbers'></div>
     </div>
   </body>
 </html>
