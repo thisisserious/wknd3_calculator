@@ -4,18 +4,29 @@ $(function () {
 
   // getNums();
 
-  $('form').on('submit', function (event) {
+  $('.operation').on('click', function (event) {
     event.preventDefault();
-
-    var formData = $(this).serialize();
     console.log('this:', this);
-    // var mathOperation = $(this).eq(4).attr('id');
-    // console.log('math operation:', mathOperation);
+
+    var formData = $('form').serialize();
+    console.log('formData:', formData);
+
+    var calcObject = {};
+    var firstNum = $('input[name=firstNum]').val();
+    var secondNum = $('input[name=secondNum]').val();
+    var mathOperation = $(this).data('operator');
+    console.log('mathOperation:', mathOperation);
+
+    calcObject.firstNum = firstNum;
+    calcObject.secondNum = secondNum;
+    calcObject.mathOperation = mathOperation;
+
+    console.log('calcObject:', calcObject);
 
     $.ajax({
       type: 'POST',
       url: '/calculator',
-      data: formData,
+      data: calcObject,
       success: function (addObj) {
         console.log('numsObj:', addObj);
         var $li = $('<div></div>');
@@ -28,48 +39,48 @@ $(function () {
       },
     });
 
-    $.ajax({
-      type: 'POST',
-      url: '/subtract',
-      data: formData,
-      success: function (diffObj) {
-        console.log('diffObj:', diffObj);
-        var $li = $('<div></div>');
-        $li.append('<p>' + diffObj + '</p>');
-        $li.append('<button id="clear">Clear</button>');
-        $('#numbers').append($li);
-        $('#clear').on('click', function () {
-          $('#numbers').empty();
-        });
-      },
-    });
-
-    var inputs = $(this).find('input[type=number]').val('');
-    console.log('inputs:', inputs);
-    var buttons = $(this).find('button[type=submit]').val('');
-    console.log('buttons:', buttons);
+    // $.ajax({
+    //   type: 'POST',
+    //   url: '/subtract',
+    //   data: formData,
+    //   success: function (diffObj) {
+    //     console.log('diffObj:', diffObj);
+    //     var $li = $('<div></div>');
+    //     $li.append('<p>' + diffObj + '</p>');
+    //     $li.append('<button id="clear">Clear</button>');
+    //     $('#numbers').append($li);
+    //     $('#clear').on('click', function () {
+    //       $('#numbers').empty();
+    //     });
+    //   },
+    // });
+    //
+    // var inputs = $(this).find('input[type=number]').val('');
+    // console.log('inputs:', inputs);
+    // var buttons = $(this).find('button[type=submit]').val('');
+    // console.log('buttons:', buttons);
   });
 
 });
 
-function getNums() {
-  $.ajax({
-    type: 'GET',
-    url: '/calculator',
-    success: function (nums) {
-      console.log('nums:', nums);
-
-      // $('#numbers').empty();
-      for (key in nums) {
-        console.log('key:', key);
-      }
-
-      // nums.forEach(function (num) {
-      //   var $li = $('<li></li>');
-      //   $li.append('<p>' + body.num.firstNum + '</p>');
-      //   $li.append('<p>' + body.num.secondNum + '</p>');
-      //   $('#numbers').append($li);
-      // });
-    },
-  });
-}
+// function getNums() {
+//   $.ajax({
+//     type: 'GET',
+//     url: '/calculator',
+//     success: function (nums) {
+//       console.log('nums:', nums);
+//
+//       // $('#numbers').empty();
+//       for (key in nums) {
+//         console.log('key:', key);
+//       }
+//
+//       // nums.forEach(function (num) {
+//       //   var $li = $('<li></li>');
+//       //   $li.append('<p>' + body.num.firstNum + '</p>');
+//       //   $li.append('<p>' + body.num.secondNum + '</p>');
+//       //   $('#numbers').append($li);
+//       // });
+//     },
+//   });
+// }
