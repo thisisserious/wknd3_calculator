@@ -1,21 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-// var test = 'calculator.js is working';
-// var nums = [];
-// console.log('nums:', nums);
-// router.get('/', function (req, res) {
-//   res.send(req.body);
-
-// console.log('test:', test);
-// });
-
-// router.post('/', function (req, res) {
-//     console.log('req.body:', req.body);
-//     res.send(req.body);
-//   });
-
-router.post('/', function (req, res) {
+router.post('/', function(req, res) {
     console.log('calculator.js req.body:', req.body);
     var mathOperation = req.body.mathOperation;
     var add = parseInt(req.body.firstNum) + parseInt(req.body.secondNum);
@@ -41,7 +27,7 @@ router.post('/', function (req, res) {
         res.send(quotient);
         break;
       default:
-        console.log('Boo.');
+        console.log('Error in calculator.js switch statement');
     }
   });
 

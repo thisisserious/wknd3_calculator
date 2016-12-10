@@ -4,14 +4,9 @@ var path = require('path');
 var calcRouter = require('./routes/calculator');
 var app = express(); // create a new app
 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({extended: true}));
 
 app.use('/calculator', calcRouter);
-
-// app.post('/', function (req, res) {
-//   console.log('req.body=', req.body);
-//   res.send(req.body);
-// });
 
 app.get('/', function (req, res) {
   var date = new Date();
@@ -19,7 +14,6 @@ app.get('/', function (req, res) {
   var mins = date.getMinutes();
   console.log('Received request at:', hour + ':' + mins);
   var filename = path.join(__dirname, 'public/views/index.html');
-  // console.log('filename:', filename);
   res.sendFile(filename);
 });
 
