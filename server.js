@@ -8,7 +8,7 @@ var app = express(); // create a new app
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/calculator', calcRouter);
-app.use('/subtract', subtractRouter);
+// app.use('/subtract', subtractRouter);
 
 // app.post('/', function (req, res) {
 //   console.log('req.body=', req.body);
@@ -28,3 +28,5 @@ app.get('/', function (req, res) {
 app.use(express.static('public')); // middleware
 
 app.listen(3000);
+
+console.log('Listening on port 3000');

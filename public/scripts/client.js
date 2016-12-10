@@ -26,11 +26,11 @@ $(function () {
     $.ajax({
       type: 'POST',
       url: '/calculator',
-      data: calcObject,
-      success: function (addObj) {
-        console.log('numsObj:', addObj);
+      data: formData,
+      success: function (answer) {
+        console.log('client.js answer:', answer);
         var $li = $('<div></div>');
-        $li.append('<p>' + addObj + '</p>');
+        $li.append('<p>' + answer + '</p>');
         $li.append('<button id="clear">Clear</button>');
         $('#numbers').append($li);
         $('#clear').on('click', function () {
@@ -54,11 +54,11 @@ $(function () {
     //     });
     //   },
     // });
-    //
-    // var inputs = $(this).find('input[type=number]').val('');
-    // console.log('inputs:', inputs);
-    // var buttons = $(this).find('button[type=submit]').val('');
-    // console.log('buttons:', buttons);
+
+    var inputs = $(this).find('input[type=number]').val('');
+    console.log('inputs:', inputs);
+    var buttons = $(this).find('button[type=submit]').val('');
+    console.log('buttons:', buttons);
   });
 
 });

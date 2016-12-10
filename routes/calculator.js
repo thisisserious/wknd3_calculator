@@ -16,7 +16,8 @@ var router = express.Router();
 //   });
 
 router.post('/', function (req, res) {
-    console.log('req.body:', req.body);
+    console.log('calculator.js req.body:', req.body);
+    var mathOperation = req.body.mathOperation;
     var add = parseInt(req.body.firstNum) + parseInt(req.body.secondNum);
     var sum = add.toString();
     var subtract = parseInt(req.body.firstNum) - parseInt(req.body.secondNum);
@@ -25,20 +26,23 @@ router.post('/', function (req, res) {
     var product = multiply.toString();
     var divide = parseInt(req.body.firstNum) / parseInt(req.body.secondNum);
     var quotient = divide.toString();
-    var operation = req.body.mathOperation;
-    console.log('mathOperation:', mathOperation);
-    console.log('sum:', sum);
-    console.log('diff:', diff);
-    console.log('product:', product);
-    console.log('quotient:', quotient);
-    switch (operation) {
+
+    switch (mathOperation) {
       case 'add':
         res.send(sum);
-        // res.sendStatus(200);
-      break;
+        break;
+      case 'subtract':
+        res.send(diff);
+        break;
+      case 'multiply':
+        res.send(product);
+        break;
+      case 'divide':
+        res.send(quotient);
+        break;
+      default:
+        console.log('Boo.');
     }
-
-    // res.sendStatus(201);
   });
 
 module.exports = router;
