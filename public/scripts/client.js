@@ -4,24 +4,13 @@ $(function () {
 
   // getNums();
 
-  $('.operation').on('click', function (event) {
+  $('form').on('submit', function (event) {
     event.preventDefault();
+
+    var formData = $(this).serialize();
     console.log('this:', this);
-
-    var formData = $('form').serialize();
-    console.log('formData:', formData);
-
-    var calcObject = {};
-    var firstNum = $('input[name=firstNum]').val();
-    var secondNum = $('input[name=secondNum]').val();
-    var mathOperation = $(this).data('operator');
-    console.log('mathOperation:', mathOperation);
-
-    calcObject.firstNum = firstNum;
-    calcObject.secondNum = secondNum;
-    calcObject.mathOperation = mathOperation;
-
-    console.log('calcObject:', calcObject);
+    // var mathOperation = $(this).eq(4).attr('id');
+    // console.log('math operation:', mathOperation);
 
     $.ajax({
       type: 'POST',
