@@ -16,10 +16,10 @@ $(function () {
       type: 'POST',
       url: '/calculator',
       data: formData,
-      success: function (addObj) {
-        console.log('numsObj:', addObj);
+      success: function (answer) {
+        console.log('client.js answer:', answer);
         var $li = $('<div></div>');
-        $li.append('<p>' + addObj + '</p>');
+        $li.append('<p>' + answer + '</p>');
         $li.append('<button id="clear">Clear</button>');
         $('#numbers').append($li);
         $('#clear').on('click', function () {
