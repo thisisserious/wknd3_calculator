@@ -10,3 +10,13 @@ form {
   border: 1px dashed black;
   text-align: center;
 }
+
+.btn-default {
+  background-color: lightgray;
+    border-radius: 0;
+    border: 1px solid darkgray;
+}
+
+.btn-warning {
+  border-radius: 0;
+    }
