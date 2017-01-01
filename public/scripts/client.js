@@ -27,4 +27,7 @@ $(function() {
     console.log('buttons:', buttons);
   });
 
+  $('input[type=button]').on('click', function() {
+    console.log('bootstrap buttons & this value:', $(this).val());
+  });
 });

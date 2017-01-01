@@ -1,42 +1,86 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset='utf-8'>
     <title>Calculator App</title>
 
     <script src='vendors/jquery-3.1.0.min.js' charset='utf-8'></script>
     <script src='scripts/client.js' charset='utf-8'></script>
 
-    <link rel='stylesheet' href='styles/style.css' />
     <link href='https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono' rel='stylesheet'>
+    <link href='vendors/dist/css/bootstrap.min.css' rel='stylesheet' />
+    <link rel='stylesheet' href='styles/style.css' />
 
-  </head>
-  <body>
+
+</head>
+
+<body>
     <div id='container'>
-      <h1>Calculator</h1>
-      <form id='calculator'>
-        <label>1st Number</label>
-        <input type='number' name='firstNum' />
+        <h1>Calculator</h1>
+        <form id='calculator'>
+            <label>1st Number</label>
+            <input type='number' name='firstNum' />
 
-        <label>2nd Number</label>
-        <input type='number' name='secondNum' />
+            <label>2nd Number</label>
+            <input type='number' name='secondNum' />
 
-        <label for='add'>Add</label>
-        <input type='radio' name='mathOperation' value='add' id='add'/>
+            <label for='add'>Add</label>
+            <input type='radio' name='mathOperation' value='add' id='add' />
 
-        <label for='subtract'>Subtract</label>
-        <input type='radio' name='mathOperation' value='subtract' id='subtract'/>
+            <label for='subtract'>Subtract</label>
+            <input type='radio' name='mathOperation' value='subtract' id='subtract' />
 
-        <label for='multiply'>Multiply</label>
-        <input type='radio' name='mathOperation' value='multiply' id='multiply'/>
+            <label for='multiply'>Multiply</label>
+            <input type='radio' name='mathOperation' value='multiply' id='multiply' />
 
-        <label for='divide'>Divide</label>
-        <input type='radio' name='mathOperation' value='divide' id='divide'/>
+            <label for='divide'>Divide</label>
+            <input type='radio' name='mathOperation' value='divide' id='divide' />
 
-        <input type='submit' value='=' />
-      </form>
+            <input type='submit' value='=' />
+        </form>
 
-      <div id='numbers'></div>
+        <div id='numbers'></div>
     </div>
-  </body>
+    <div class="container">
+        <div class="col-md-4">
+          <input type='button' class='btn btn-default' value='AC' />
+          <input type='button' class='btn btn-default' value='+/-' />
+          <input type='button' class='btn btn-default' value='%' />
+          <input type='button' class='btn btn-warning' value='/' />
+        </div>
+    </div>
+    <div class="container">
+        <div class="col-md-4">
+            <input type='button' class='btn btn-default' value='1' />
+            <input type='button' class='btn btn-default' value='2' />
+            <input type='button' class='btn btn-default' value='3' />
+            <input type='button' class='btn btn-warning' value='x' />
+        </div>
+    </div>
+    <div class="container">
+        <div class="col-md-4">
+          <input type='button' class='btn btn-default' value='4' />
+          <input type='button' class='btn btn-default' value='5' />
+          <input type='button' class='btn btn-default' value='6' />
+          <input type='button' class='btn btn-warning' value='-' />
+        </div>
+    </div>
+    <div class="container">
+        <div class="col-md-4">
+          <input type='button' class='btn btn-default' value='7' />
+          <input type='button' class='btn btn-default' value='8' />
+          <input type='button' class='btn btn-default' value='9' />
+          <input type='button' class='btn btn-warning' value='+' />
+        </div>
+    </div>
+    <div class="container">
+        <div class="col-md-3">
+          <input type='button' class='btn btn-default' value='0' />
+          <input type='button' class='btn btn-default' value='.' />
+          <input type='button' class='btn btn-default' value='=' />
+        </div>
+    </div>
+</body>
+
 </html>

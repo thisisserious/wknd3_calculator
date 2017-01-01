@@ -1,12 +1,23 @@
 h1 {
-  font-family: 'Roboto Mono', monospace;
+    font-family: 'Roboto Mono', monospace;
 }
 
 form {
-  font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 #container {
-  border: 1px dashed black;
-  text-align: center;
+    border: 1px dashed black;
+    text-align: center;
+}
+
+.btn-default {
+    background-color: lightgray;
+    border-radius: 0;
+    border: 1px solid black;
+}
+
+.btn-warning {
+    border-radius: 0;
+    border: 1px solid black;
 }
