@@ -1,3 +1,5 @@
+var calculatorInputs = [];
+
 $(function() {
 
   $('form').on('submit', function(event) {
@@ -27,7 +29,34 @@ $(function() {
     console.log('buttons:', buttons);
   });
 
-  $('input[type=button]').on('click', function() {
-    console.log('bootstrap buttons & this value:', $(this).val());
+  $('input[name=number]').on('click', function() {
+    console.log('bootstrap buttons & this value:', this, $(this).val());
+    var value = $(this).val();
+    var inputs = {};
+    inputs.value = value;
+    console.log('inputs:', inputs);
+    calculatorInputs.push(inputs);
+    // switch(name) {
+    //   case('number'):
+    //     inputs.firstNum = value;
+    //     break;
+    //   case('mathOperation'):
+    //     inputs.mathOperation = value;
+    //     break;
+    //   case('number'):
+    //     inputs.secondNum = value;
+    //     break;
+    //   default:
+    //     console.log('error in client.js switch statement');
+    // }
+    // inputs.firstNum = value;
+    // inputs.secondNum = value;
+    // inputs.mathOperation = value;
+    console.log('inputs', calculatorInputs);
+    // $.ajax({
+    //   type: 'POST',
+    //   url: '/calculator',
+    //   data: value,
+    // });
   });
 });
