@@ -29,13 +29,14 @@ $(function() {
     console.log('buttons:', buttons);
   });
 
-  $('input[name=number]').on('click', function() {
+  $('.btn').on('click', function() {
     console.log('bootstrap buttons & this value:', this, $(this).val());
     var value = $(this).val();
     var inputs = {};
     inputs.value = value;
-    console.log('inputs:', inputs);
-    calculatorInputs.push(inputs);
+    console.log('inputs:', inputs, 'value: ', value);
+    console.log('name= ', this.getAttribute('name'));
+    // calculatorInputs.push(inputs);
     // switch(name) {
     //   case('number'):
     //     inputs.firstNum = value;
