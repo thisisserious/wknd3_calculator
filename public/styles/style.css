@@ -11,6 +11,9 @@ form {
     text-align: center;
 }
 
+#equalSign {
+  width: 5.5em;
+}
 .btn-default {
     background-color: lightgray;
     border-radius: 0;
